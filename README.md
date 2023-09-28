@@ -155,3 +155,9 @@ The base URL for all API endpoints is: `http://localhost:3000/api`
       ```
   - **Error (500 Internal Server Error):** Internal server error.
 
+
+# Screenshots of the endpoints
+
+![](images/../src/images/uptick11.png)
+![](images/../src/images/uptick22.png)
+![](images/../src/images/uptick33.png)
