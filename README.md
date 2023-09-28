@@ -132,9 +132,7 @@ The base URL for all API endpoints is: `http://localhost:3000/api`
           },
           "text": "Hello, everyone!",
           "chatRoom": "60fbb3213e04e52f84ebebab",
-          "createdAt": "2022-08-25T12:30:45
-
-.678Z"
+          "createdAt": "2022-08-25T12:30:45.678Z"
         },
         {
           "_id": "60fbb3213e04e52f84ebebae",
