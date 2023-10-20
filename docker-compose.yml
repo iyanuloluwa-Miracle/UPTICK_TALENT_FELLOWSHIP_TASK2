@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3005:3005"
+    depends_on:
+      - database
+    environment:
+      MONGO_URL: "mongodb+srv://Iyanuloluwa:C1kOPqCuVMuaX1yU@cluster0.anckcvl.mongodb.net/?retryWrites=true&w=majority" # Update the database URL as needed
+  database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
