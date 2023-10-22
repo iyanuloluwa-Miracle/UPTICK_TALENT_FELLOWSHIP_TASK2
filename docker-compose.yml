@@ -1,16 +1,24 @@
-version: '3'
+version: "3"
+
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3005:3005"
-    depends_on:
-      - database
-    environment:
-      MONGO_URL: "mongodb+srv://Iyanuloluwa:C1kOPqCuVMuaX1yU@cluster0.anckcvl.mongodb.net/?retryWrites=true&w=majority" # Update the database URL as needed
-  database:
+  # MongoDB services
+  mongo_db:
+    container_name: db_container
     image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  # Node API services
+  api:
+    build: .
     ports:
-      - "27017:27017"
+      - 3005:3005
+    environment:
+      PORT: 3005
+      MONGODB_URI: "mongodb+srv://iyanuloluwa:Iremide.nexzy10@cluster0.anckcvl.mongodb.net/?retryWrites=true&w=majority"
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_db: {}
